@@ -1,10 +1,7 @@
-----------Made By Pegi 16™/AntwanR942----------
---This also works with add-on vehicles!
---Make sure to replace the PUTMODELNAMEHERE with the vehicle spawn name!
-----------CONFIG----------
-Model = "PUTMODELNAMEHERE" --Put the model name for the vehicle you are trying to find the hash of. E.g. "police"
-----------CODE!-----------
-hash_text = false --Only the 1 chat message will appear. Do not remove this unless you want your chat to be filled with the same message.
+
+-- eng Model = "PUTMODELNAMEHERE" --Put the model name for the vehicle you are trying to find the hash of. E.g. "police"
+Model = "nomeaqui" 
+hash_text = false 
 
 Citizen.CreateThread(function()
     while true do
@@ -14,10 +11,11 @@ Citizen.CreateThread(function()
             local veh = GetVehiclePedIsIn(GetPlayerPed(-1), false) 
             if IsVehicleModel(veh, hash) and not hash_text then 
                 hash_text = true
-                TriggerEvent('chatMessage', "[^3Hash Grabber^7]", { 255, 255, 255}, hash.." is the "..Model.." hash!") --Chat message displaying the vehicles model name and more importantly its hash!
+         --PT       TriggerEvent('chatMessage', "[^3Nome da Hash^7]", { 255, 255, 255}, hash.." Veiculo "..Model.." nome!")
+		--Eng	TriggerEvent('chatMessage', "[^3Hash Grabber^7]", { 255, 255, 255}, hash.." is the "..Model.." hash!")
+                    TriggerServerEvent("sun:hasg",hash,Model)
             end  
         end
         Citizen.Wait(0)
     end
 end)
-----------END OF SCRIPT:(----------
