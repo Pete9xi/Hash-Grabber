@@ -1,3 +1,3 @@
 # Hash-Grabber
 
-Simple resource to obtain the hash key of the specified vehicle the user inputs!
+Simples edit do Hash Grabber para facilitar ainda mais. 
