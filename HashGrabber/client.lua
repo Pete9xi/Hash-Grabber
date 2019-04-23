@@ -1,21 +1,43 @@
+-- Insira os modelos abaixo.
+Modelo = {
+    "rmodbmwi8",
+    "ftoro",
+    "gtr",
+    "amarok",
+    "pturismo",
+    "p1",
+    "Skyline",
+    "rmodveneno",
+    "urus2018",
+    "everest",
+    "lp700r",
+    "193500hd",
+    "cbb",
+    "chiron17",
+    "370z",
+    "bug09",
+    "aqui",
+    "aqui",
+    "aqui",
+    "aqui",
+}
 
--- eng Model = "PUTMODELNAMEHERE" --Put the model name for the vehicle you are trying to find the hash of. E.g. "police"
-Model = "nomeaqui" 
 hash_text = false 
-
+feito = false
 Citizen.CreateThread(function()
     while true do
-        local PlayerPed = GetPlayerPed(-1) 
-        local hash = GetHashKey(Model)
-        if IsPedInAnyVehicle(PlayerPed, false) then 
-            local veh = GetVehiclePedIsIn(GetPlayerPed(-1), false) 
-            if IsVehicleModel(veh, hash) and not hash_text then 
-                hash_text = true
-         --PT       TriggerEvent('chatMessage', "[^3Nome da Hash^7]", { 255, 255, 255}, hash.." Veiculo "..Model.." nome!")
-		--Eng	TriggerEvent('chatMessage', "[^3Hash Grabber^7]", { 255, 255, 255}, hash.." is the "..Model.." hash!")
-                    TriggerServerEvent("sun:hasg",hash,Model)
-            end  
-        end
-        Citizen.Wait(0)
-    end
+        if feito == false then
+                for k,v in ipairs(Modelo) do
+                local PlayerPed = GetPlayerPed(-1) 
+                local carro = v
+                local hash = GetHashKey(v)
+                local Model = (v) 
+                       --     TriggerEvent('chatMessage', "[^1 HASH]", { 255, 255, 255}, hash.." || VEÍCULO "..v.." nome!")
+                            TriggerEvent('chatMessage', "[^1 HASH]", { 255, 255, 255}, "{ modelHash = "..hash..", modelName = "..v.."},")
+                            TriggerServerEvent("sun:hasg",hash,Model)
+            end
+        feito = true
+end
+       Citizen.Wait(0)
+   end
 end)
