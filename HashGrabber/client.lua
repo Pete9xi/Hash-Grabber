@@ -1,4 +1,4 @@
--- Insira os modelos abaixo.
+-- Insira os modelos (nome de spawn) dos veículos abaixo.
 Modelo = {
     "rmodbmwi8",
     "ftoro",
@@ -24,20 +24,18 @@ Modelo = {
 
 hash_text = false 
 feito = false
+
 Citizen.CreateThread(function()
     while true do
         if feito == false then
-                for k,v in ipairs(Modelo) do
-                local PlayerPed = GetPlayerPed(-1) 
-                local carro = v
-                local hash = GetHashKey(v)
-                local Model = (v) 
-                       --     TriggerEvent('chatMessage', "[^1 HASH]", { 255, 255, 255}, hash.." || VEÍCULO "..v.." nome!")
-                            TriggerEvent('chatMessage', "[^1 HASH]", { 255, 255, 255}, "{ modelHash = "..hash..", modelName = "..v.."},")
-                            TriggerServerEvent("sun:hasg",hash,Model)
-            end
-        feito = true
-end
+                    for k,v in ipairs(Modelo) do
+                                local hash = GetHashKey(v)
+                                local Model = (v) 
+                                TriggerServerEvent("likzao:hashenvio",hash,Model)
+                     end
+                
+                feito = true
+          end
        Citizen.Wait(0)
    end
 end)
