@@ -8,5 +8,3 @@
 - [x] Retirada Thread que estava em volta da função Server-Side.
 - [x] Retirada diversas variáves desnecessárias no `Client.lua`. 
 
-##### Contato: Likizão#1479
-###### Créditos ao Origintk (Sun2k) e ao AntwanR942.
