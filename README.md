@@ -10,3 +10,4 @@
 
 Planned Changes:
 Saving the hashes to a txt file on the server direcorty this allows for easy access.
+Remove WebHook as i see no need for this i will comment out the code block but i will not translate it feel free to if you need it 

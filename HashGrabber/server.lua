@@ -1,5 +1,24 @@
 
-local webhookurl = '' -- Insira seu Webhook dentro dos apóstrofos.
+RegisterServerEvent('hashgrabber:addtofile')
+AddEventHandler('hashgrabber:addtofile', function(hash,Model)
+local file = assert( io.open( "hashes.txt", "a" ) )
+file:write(hash)
+file:write(Model)
+file:close()
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+--[[local webhookurl = '' -- Insira seu Webhook dentro dos apóstrofos.
 local modeloparaLSC = true; -- Se você precisa que gere num formato semelhante ao necessário para colocar na Los Santos, deixe true. 
 
 
@@ -29,4 +48,4 @@ function SendWebhookMessage(message)
 		if webhookurl ~= nil then
 			PerformHttpRequest(webhookurl, function(err, text, headers) end, 'POST', json.encode({content = message}), { ['Content-Type'] = 'application/json' })
 		end
-end	
+end	--]
