@@ -1,6 +1,10 @@
--- Enter the models (spawn name) of the vehicles below. ie "adder","alpha"
+-- Enter the models (spawn name) of the vehicles below. ie "adder","alpha",
 Model = {
-
+"rs5r",
+"16cc",
+"17cliofl",
+"17octavia",
+"2016rs7",
 }
 
 hash_text = false 
