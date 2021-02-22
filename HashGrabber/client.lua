@@ -24,3 +24,5 @@ Citizen.CreateThread(function()
        Citizen.Wait(0)
    end
 end)
+
+

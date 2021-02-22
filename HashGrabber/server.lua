@@ -1,11 +1,24 @@
 
 RegisterServerEvent('hashgrabber:addtofile')
 AddEventHandler('hashgrabber:addtofile', function(hash,Model)
-local file = assert( io.open( "hashes.txt", "a" ) )
-file:write(hash)
-file:write(Model)
-file:close()
+local Output
+	local OldFile = LoadResourceFile(GetCurrentResourceName(), 'Saved' .. GetOSSep() .. PlayerName .. ' - Hashes.txt')
+	if OldFile == nil or OldFile == '' then
+		Output = ''
+	else
+		Output = OldFile .. '\n' .. hash ..  Model ..
+	end
+	local UnusedBool = SaveResourceFile(GetCurrentResourceName(), 'Saved' .. GetOSSep() .. PlayerName .. ' - Coords.txt', Output, -1)
 end)
+
+
+function GetOSSep()
+	if os.getenv('HOME') then
+		return '/'
+	else
+		return '\\'
+	end
+end
 
 
 
