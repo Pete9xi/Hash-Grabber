@@ -16,13 +16,18 @@ Citizen.CreateThread(function()
                     for k,v in ipairs(Model) do
                                 local hash = GetHashKey(v)
                                 local Model = (v) 
-                                TriggerServerEvent("hashgrabber:addtofile",hash,Model)
+								--TriggerEvent('chatMessage', "[^3Hash Grabber^7]", { 255, 255, 255}, hash.." is the "..Model.." hash!")
+                                TriggerServerEvent("hashgrabber:addtofile",hash,Model,GetPlayerName(PlayerId()))
                      end
                 
                 done = true
           end
        Citizen.Wait(0)
    end
+end)
+
+RegisterCommand("gethash", function(source, args, rawCommand)
+   done = false
 end)
 
 
